@@ -5,9 +5,10 @@ import habitsRoutes from './routes/habitsRoutes.js';
 
 dotenv.config()
 const app = express();
-app.use(express.json());
 const port = 5555;
 
+
+app.use(express.json());
 app.use('/api/habits', habitsRoutes)
 
 app.listen(port, () => {
