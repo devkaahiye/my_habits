@@ -6,7 +6,7 @@ const habitsSchema = mongoose.Schema({
         required:true
     },
     dateTime:{
-        type:Date,
+        type:String,
         required:true
     },
     description:{

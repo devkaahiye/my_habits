@@ -27,7 +27,7 @@ export const createHabits = async (req, res) => {
     const { title, dateTime, description, done } = req.body;
     const newHabits = new Habits({
       title,
-      dateTime: new  Date(dateTime).getTime(),
+      dateTime: dateTime,
       description,
       done
     });
