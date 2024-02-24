@@ -24,10 +24,10 @@ export const getHabitById = async (req, res) => {
 export const createHabits = async (req, res) => {
   try {
 
-    const { title, date, description,done } = req.body;
+    const { title, dateTime, description, done } = req.body;
     const newHabits = new Habits({
       title,
-      date:new  Date(date),
+      dateTime:new  Date(dateTime),
       description,
       done
     });
