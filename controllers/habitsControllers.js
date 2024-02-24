@@ -24,11 +24,12 @@ export const getHabitById = async (req, res) => {
 export const createHabits = async (req, res) => {
   try {
 
-    const { title, date, description } = req.body;
+    const { title, date, description,done } = req.body;
     const newHabits = new Habits({
       title,
       date:new  Date(date),
       description,
+      done
     });
     const habit = await newHabits.save();
     res.status(200).json(habit);
@@ -40,12 +41,13 @@ export const createHabits = async (req, res) => {
 
 export const updateHabit = async(req, res)=>{
     try {
-        const { title, date, description } = req.body;
+        const { title, date, description , done} = req.body;
         const habit = await Habits.findById(req.params.id);
         if (note) {
             habit.title=title;
             habit.date=date;
             habit.description= description
+            habit.done = done
 
             const updatedhabit = await habit.save()
             res.status(200).json(updatedhabit);
